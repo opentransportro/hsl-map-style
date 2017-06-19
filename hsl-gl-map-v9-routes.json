@@ -9,8 +9,8 @@
   },
   "sources": {
     "routes": {
-      "url": "http://api.digitransit.fi/map/v1/hsl-route-map/index.json",
-      "type": "vector"
+      "data": "http://kartat.hsl.fi/tmp/out.json",
+      "type": "geojson"
     },
     "rail": {
       "data": "https://raw.githubusercontent.com/HSLdevcom/hsl-map-style/master/data/rail.geojson",
@@ -29,14 +29,13 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "all",
         [
           "!in",
-          "shortName",
-          "550",
-          "560"
+          "route_id",
+          "2550",
+          "4560"
         ],
         [
           "==",
@@ -75,14 +74,13 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "all",
         [
           "!in",
-          "shortName",
-          "550",
-          "560"
+          "route_id",
+          "2550",
+          "4560"
         ],
         [
           "==",
@@ -148,7 +146,6 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "==",
         "mode",
@@ -185,7 +182,6 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "==",
         "mode",
@@ -250,14 +246,13 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "all",
         [
           "in",
-          "shortName",
-          "550",
-          "560"
+          "route_id",
+          "2550",
+          "4560"
         ]
       ],
       "interactive": true,
@@ -291,14 +286,13 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "all",
         [
           "in",
-          "shortName",
-          "550",
-          "560"
+          "route_id",
+          "2550",
+          "4560"
         ]
       ],
       "interactive": true,
@@ -399,7 +393,6 @@
         "mapbox:group": "1457010660461.3042"
       },
       "source": "routes",
-      "source-layer": "routes",
       "filter": [
         "==",
         "mode",
