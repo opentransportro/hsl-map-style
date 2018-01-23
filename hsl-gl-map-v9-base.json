@@ -1543,7 +1543,12 @@
                 [
                     "==",
                     "class",
-                    "major_rail"
+                    "rail"
+                ],
+                [
+                    "==",
+                    "subclass",
+                    "rail"
                 ]
             ],
             "layout": {
