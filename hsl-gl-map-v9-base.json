@@ -326,7 +326,7 @@
             "source-layer": "aeroway",
             "filter": [
                 "==",
-                "subclass",
+                "class",
                 "runway"
             ],
             "layout": {
@@ -358,7 +358,7 @@
             "source-layer": "aeroway",
             "filter": [
                 "==",
-                "subclass",
+                "class",
                 "taxiway"
             ],
             "layout": {
