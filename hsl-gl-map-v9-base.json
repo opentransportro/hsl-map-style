@@ -47,9 +47,12 @@
             "source": "vector",
             "source-layer": "landuse",
             "filter": [
-                "==",
+                "in",
                 "class",
+                "university",
+                "college",
                 "school"
+
             ],
             "paint": {
                 "fill-color": "#f9f4d2"
