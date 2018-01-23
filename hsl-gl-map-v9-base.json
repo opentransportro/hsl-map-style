@@ -444,7 +444,7 @@
             "id": "landuse_wetland",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse_overlay",
+            "source-layer": "landcover",
             "filter": [
                 "==",
                 "class",
