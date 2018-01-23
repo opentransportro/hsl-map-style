@@ -59,11 +59,19 @@
             "id": "landuse_park",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
-                "==",
-                "class",
-                "park"
+                "all",
+                [
+                    "==",
+                    "class",
+                    "grass"
+                ],
+                [
+                    "!=",
+                    "subclass",
+                    "grass"
+                ] 
             ],
             "layout": {
                 "visibility": "visible"
@@ -129,11 +137,18 @@
             "id": "landuse_grass",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
-                "==",
-                "class",
-                "grass"
+                "all",
+                [
+                    "==",
+                    "class",
+                    "grass"
+                ],[
+                    "==",
+                    "subclass",
+                    "grass"
+                ]
             ],
             "paint": {
                 "fill-color": "rgba(208,227,184,1)"
