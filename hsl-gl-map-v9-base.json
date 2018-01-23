@@ -1177,16 +1177,16 @@
                     [
                         "==",
                         "class",
-                        "major_rail"
+                        "transit"
                     ],
                     [
                         "==",
-                        "structure",
+                        "brunnel",
                         "tunnel"
                     ],
                     [
                         "==",
-                        "type",
+                        "subclass",
                         "subway"
                     ]
                 ]
