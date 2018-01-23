@@ -697,6 +697,45 @@
             }
         },
         {
+            "id": "road_raceway",
+            "type": "line",
+            "source": "vector",
+            "source-layer": "transportation",
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "==",
+                    "class",
+                    "raceway"
+                ]
+            ],
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round"
+            },
+            "paint": {
+                "line-color": "#ccc",
+                "line-width": {
+                    "base": 1.55,
+                    "stops": [
+                        [
+                            4,
+                            1
+                        ],
+                        [
+                            20,
+                            54
+                        ]
+                    ]
+                }
+            }
+        },
+        {
             "id": "road_pedestrian",
             "type": "fill",
             "source": "vector",
