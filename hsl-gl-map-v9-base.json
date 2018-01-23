@@ -87,7 +87,7 @@
             "id": "landuse_wood",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
                 "in",
                 "class",
@@ -102,7 +102,7 @@
             "id": "landuse_park_nature_reserve",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
                 "all",
                 [
@@ -161,7 +161,7 @@
             "id": "landuse_sand",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
                 "==",
                 "class",
@@ -205,7 +205,7 @@
             "id": "landuse_agriculture",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
                 "==",
                 "class",
