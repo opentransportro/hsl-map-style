@@ -112,7 +112,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "nature_reserve"
                 ]
             ],
@@ -258,7 +258,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "horse_racing"
                 ]
             ],
@@ -281,7 +281,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "track"
                 ]
             ],
@@ -326,7 +326,7 @@
             "source-layer": "aeroway",
             "filter": [
                 "==",
-                "type",
+                "subclass",
                 "runway"
             ],
             "layout": {
@@ -358,7 +358,7 @@
             "source-layer": "aeroway",
             "filter": [
                 "==",
-                "type",
+                "subclass",
                 "taxiway"
             ],
             "layout": {
@@ -685,7 +685,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "service"
                 ]
             ],
@@ -710,7 +710,7 @@
                 ],
                 [
                     "in",
-                    "type",
+                    "subclass",
                     "pedestrian",
                     "platform"
                 ]
@@ -810,7 +810,7 @@
                     "all",
                     [
                         "!=",
-                        "type",
+                        "subclass",
                         "cycleway"
                     ],
                     [
@@ -865,14 +865,9 @@
                 [
                     "all",
                     [
-                        "!=",
-                        "type",
-                        "subway"
-                    ],
-                    [
                         "==",
                         "class",
-                        "major_rail"
+                        "rail"
                     ],
                     [
                         "==",
@@ -944,7 +939,7 @@
                     ],
                     [
                         "in",
-                        "type",
+                        "class",
                         "primary",
                         "secondary"
                     ]
@@ -1005,7 +1000,7 @@
                     ],
                     [
                         "in",
-                        "type",
+                        "subclass",
                         "motorway",
                         "trunk"
                     ]
@@ -1193,6 +1188,10 @@
                         30133633
                     ],
                     [
+                        "!has",
+                        "service"
+                    ],
+                    [
                         "==",
                         "class",
                         "transit"
@@ -1264,13 +1263,17 @@
                     "tunnel"
                 ],
                 [
-                    "==",
-                    "class",
-                    "major_rail"
+                    "!has",
+                    "service"
                 ],
                 [
                     "==",
-                    "type",
+                    "class",
+                    "transit"
+                ],
+                [
+                    "==",
+                    "subclass",
                     "subway"
                 ]
             ],
@@ -1309,12 +1312,16 @@
                 [
                     "==",
                     "class",
-                    "minor_rail"
+                    "transit"
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "subway"
+                ],
+                [
+                    "has",
+                    "service"
                 ]
             ],
             "layout": {
@@ -1377,9 +1384,13 @@
                     120809795
                 ],
                 [
+                    "!has",
+                    "service"
+                ],
+                [
                     "==",
                     "class",
-                    "major_rail"
+                    "transit"
                 ],
                 [
                     "==",
@@ -1388,7 +1399,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "subway"
                 ]
             ],
@@ -1548,11 +1559,6 @@
             "filter": [
                 "all",
                 [
-                    "!=",
-                    "type",
-                    "subway"
-                ],
-                [
                     "!in",
                     "brunnel",
                     "bridge",
@@ -1664,7 +1670,7 @@
                     ],
                     [
                         "!in",
-                        "type",
+                        "subclass",
                         "cycleway",
                         "steps"
                     ],
@@ -1723,7 +1729,7 @@
                     ],
                     [
                         "!in",
-                        "type",
+                        "subclass",
                         "cycleway",
                         "steps"
                     ],
@@ -1792,7 +1798,7 @@
                     ],
                     [
                         "==",
-                        "type",
+                        "subclass",
                         "steps"
                     ]
                 ]
@@ -1859,7 +1865,7 @@
                     ],
                     [
                         "==",
-                        "type",
+                        "subclass",
                         "steps"
                     ]
                 ]
@@ -1926,7 +1932,7 @@
                     ],
                     [
                         "in",
-                        "type",
+                        "subclass",
                         "cycleway",
                         "path",
                         "pedestrian",
@@ -2168,7 +2174,7 @@
                 ],
                 [
                     "in",
-                    "type",
+                    "subclass",
                     "construction",
                     "construction:living_street",
                     "construction:motorway",
@@ -2248,7 +2254,7 @@
                     ],
                     [
                         "in",
-                        "type",
+                        "subclass",
                         "motorway_link",
                         "trunk_link"
                     ]
@@ -2291,7 +2297,7 @@
                     "all",
                     [
                         "!=",
-                        "type",
+                        "subclass",
                         "trunk_link"
                     ],
                     [
@@ -2344,7 +2350,7 @@
                     ],
                     [
                         "in",
-                        "type",
+                        "subclass",
                         "motorway_link",
                         "trunk_link"
                     ]
@@ -2399,7 +2405,7 @@
                     "all",
                     [
                         "!=",
-                        "type",
+                        "subclass",
                         "trunk_link"
                     ],
                     [
@@ -2530,11 +2536,11 @@
                 [
                     "==",
                     "class",
-                    "minor_rail"
+                    "transit"
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "tram"
                 ]
             ],
@@ -2600,14 +2606,9 @@
                 [
                     "all",
                     [
-                        "!=",
-                        "type",
-                        "subway"
-                    ],
-                    [
                         "==",
                         "class",
-                        "major_rail"
+                        "rail"
                     ],
                     [
                         "==",
@@ -2674,14 +2675,9 @@
             "filter": [
                 "all",
                 [
-                    "!=",
-                    "type",
-                    "subway"
-                ],
-                [
                     "==",
                     "class",
-                    "major_rail"
+                    "rail"
                 ],
                 [
                     "==",
@@ -3207,7 +3203,7 @@
                 [
                     "==",
                     "class",
-                    "minor_rail"
+                    "transit"
                 ],
                 [
                     "==",
@@ -3216,7 +3212,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "subclass",
                     "tram"
                 ]
             ],
