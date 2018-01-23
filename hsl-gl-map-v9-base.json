@@ -1050,7 +1050,7 @@
                         "in",
                         "class",
                         "",
-                        "street",
+                        "minor",
                         "street_limited",
                         "tertiary"
                     ]
@@ -2105,7 +2105,7 @@
                     [
                         "in",
                         "class",
-                        "street",
+                        "minor",
                         "tertiary"
                     ]
                 ]
@@ -2863,7 +2863,7 @@
                         "class",
                         "driveway",
                         "service",
-                        "street",
+                        "minor",
                         "street_limited",
                         "tertiary"
                     ]
@@ -3035,7 +3035,7 @@
                         "class",
                         "driveway",
                         "service",
-                        "street",
+                        "minor",
                         "street_limited",
                         "tertiary"
                     ]
