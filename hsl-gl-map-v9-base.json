@@ -1568,7 +1568,7 @@
             "id": "road_waterway",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "road_label",
+            "source-layer": "transportation_name",
             "minzoom": 12,
             "filter": [
                 "all",
