@@ -475,13 +475,18 @@
             "id": "landuse_barrier_line",
             "type": "fill",
             "source": "vector",
-            "source-layer": "barrier_line",
+            "source-layer": "poi",
             "filter": [
                 "all",
                 [
                     "==",
                     "class",
-                    "land"
+                    "barrier"
+                ],
+                [
+                    "==",
+                    "class",
+                    "subclass"
                 ],
                 [
                     "in",
@@ -499,7 +504,7 @@
             "id": "landuse_barrier_line_land",
             "type": "line",
             "source": "vector",
-            "source-layer": "barrier_line",
+            "source-layer": "poi",
             "filter": [
                 "all",
                 [
@@ -510,6 +515,11 @@
                 [
                     "==",
                     "class",
+                    "barrier"
+                ],
+                [
+                    "==",
+                    "subclass",
                     "land"
                 ]
             ],
@@ -537,12 +547,17 @@
             "id": "landuse_barrier_line_cliff",
             "type": "line",
             "source": "vector",
-            "source-layer": "barrier_line",
+            "source-layer": "poi",
             "filter": [
                 "all",
                 [
                     "==",
                     "class",
+                    "barrier"
+                ],
+                [
+                    "==",
+                    "subclass",
                     "cliff"
                 ],
                 [
@@ -643,11 +658,19 @@
             "id": "landuse_barrier_line_fence",
             "type": "line",
             "source": "vector",
-            "source-layer": "barrier_line",
+            "source-layer": "poi",
             "filter": [
-                "==",
-                "class",
-                "fence"
+                "all",
+                [
+                    "==",
+                    "class",
+                    "barrier"
+                ],
+                [
+                    "==",
+                    "subclass",
+                    "fence"
+                ]
             ],
             "layout": {
                 "line-cap": "round",
