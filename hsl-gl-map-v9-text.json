@@ -20,7 +20,7 @@
             "id": "road_minor_one-way",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "road",
+            "source-layer": "transportation",
             "filter": [
                 "all",
                 [
@@ -43,7 +43,8 @@
                         "motorway_link",
                         "service",
                         "street",
-                        "street_limited"
+                        "street_limited",
+                        "minor"
                     ]
                 ]
             ],
@@ -77,14 +78,14 @@
             "id": "housenum_label",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "housenum_label",
+            "source-layer": "housenumber",
             "filter": [
                 "==",
                 "$type",
                 "Point"
             ],
             "layout": {
-                "text-field": "{house_num}",
+                "text-field": "{housenumber}",
                 "text-size": {
                     "stops": [
                         [
@@ -113,7 +114,7 @@
                 "mapbox:group": "1457010362398.355"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -123,41 +124,21 @@
                     "Point"
                 ],
                 [
-                    "all",
-                    [
-                        "in",
-                        "localrank",
-                        1,
-                        11,
-                        2,
-                        3,
-                        4
-                    ],
-                    [
-                        "in",
-                        "name",
-                        "Forum",
-                        "Iso Omena",
-                        "Jumbo",
-                        "Kampinkeskus",
-                        "Kauppakeskus Itis",
-                        "Kauppakeskus Kaari",
-                        "Kauppakeskus Kluuvi",
-                        "Makkaratalo",
-                        "Sello",
-                        "Sokos",
-                        "Stockmann",
-                        "Stockmann Helsinki",
-                        "World Trade Center Helsinki"
-                    ],
-                    [
-                        "in",
-                        "scalerank",
-                        1,
-                        2,
-                        3,
-                        4
-                    ]
+                    "in",
+                    "name",
+                    "Forum",
+                    "Iso Omena",
+                    "Jumbo",
+                    "Kampinkeskus",
+                    "Kauppakeskus Itis",
+                    "Kauppakeskus Kaari",
+                    "Kauppakeskus Kluuvi",
+                    "Makkaratalo",
+                    "Sello",
+                    "Sokos",
+                    "Stockmann",
+                    "Stockmann Helsinki",
+                    "World Trade Center Helsinki"
                 ]
             ],
             "layout": {
@@ -196,7 +177,7 @@
                 "mapbox:group": "1457010362398.355"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -207,8 +188,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Cinema"
+                    "class",
+                    "cinema"
                 ]
             ],
             "layout": {
@@ -247,7 +228,7 @@
                 "mapbox:group": "1457010362398.355"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -257,11 +238,16 @@
                     "Point"
                 ],
                 [
+                    "==",
+                    "class",
+                    "lodging"
+                ],
+                [
                     "in",
-                    "type",
-                    "Bed And Breakfast",
-                    "Hostel",
-                    "Hotel"
+                    "subclass",
+                    "bed_and_breakfast",
+                    "hostel",
+                    "hotel"
                 ]
             ],
             "layout": {
@@ -300,7 +286,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -313,24 +299,8 @@
                     "all",
                     [
                         "==",
-                        "type",
-                        "Theatre"
-                    ],
-                    [
-                        "in",
-                        "localrank",
-                        1,
-                        2,
-                        3,
-                        4
-                    ],
-                    [
-                        "in",
-                        "scalerank",
-                        1,
-                        2,
-                        3,
-                        4
+                        "class",
+                        "theatre"
                     ]
                 ]
             ],
@@ -370,7 +340,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -381,8 +351,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Concert Hall"
+                    "class",
+                    "concert_hall"
                 ]
             ],
             "layout": {
@@ -421,7 +391,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -440,8 +410,8 @@
                     ],
                     [
                         "==",
-                        "type",
-                        "Attraction"
+                        "class",
+                        "attraction"
                     ]
                 ]
             ],
@@ -481,7 +451,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -492,8 +462,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Transportation"
+                    "class",
+                    "transportation"
                 ]
             ],
             "layout": {
@@ -532,7 +502,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -545,15 +515,15 @@
                     "all",
                     [
                         "!in",
-                        "scalerank",
+                        "rank",
                         3,
                         4,
                         5
                     ],
                     [
                         "==",
-                        "type",
-                        "Attraction"
+                        "class",
+                        "attraction"
                     ]
                 ]
             ],
@@ -593,7 +563,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -644,7 +614,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -657,20 +627,12 @@
                     "all",
                     [
                         "==",
-                        "type",
-                        "Park"
+                        "class",
+                        "park"
                     ],
                     [
                         "in",
-                        "localrank",
-                        1,
-                        2,
-                        3,
-                        4
-                    ],
-                    [
-                        "in",
-                        "scalerank",
+                        "rank",
                         1,
                         2,
                         3,
@@ -713,7 +675,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "road_label",
+            "source-layer": "transportation_name",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -764,7 +726,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 13,
             "filter": [
                 "all",
@@ -774,30 +736,10 @@
                     "Point"
                 ],
                 [
-                    "all",
-                    [
-                        "in",
-                        "localrank",
-                        1,
-                        2,
-                        3,
-                        4
-                    ],
-                    [
-                        "in",
-                        "scalerank",
-                        1,
-                        2,
-                        3,
-                        4
-                    ],
-                    [
-                        "in",
-                        "type",
-                        "",
-                        "Sports Centre",
-                        "Stadium"
-                    ]
+                    "in",
+                    "class",
+                    "sports_centre",
+                    "stadium"
                 ]
             ],
             "layout": {
@@ -836,7 +778,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -847,8 +789,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Cemetery"
+                    "class",
+                    "cemetery"
                 ]
             ],
             "layout": {
@@ -889,7 +831,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -900,8 +842,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Theme Park"
+                    "class",
+                    "theme_park"
                 ]
             ],
             "layout": {
@@ -942,7 +884,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -953,8 +895,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Museum"
+                    "class",
+                    "museum"
                 ]
             ],
             "layout": {
@@ -995,7 +937,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -1006,9 +948,10 @@
                 ],
                 [
                     "in",
-                    "type",
-                    "School",
-                    "University"
+                    "class",
+                    "school",
+                    "university",
+                    "college"
                 ]
             ],
             "layout": {
@@ -1049,7 +992,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -1062,13 +1005,13 @@
                     "all",
                     [
                         "<",
-                        "scalerank",
-                        4
+                        "rank",
+                        200
                     ],
                     [
                         "==",
-                        "type",
-                        "Place Of Worship"
+                        "class",
+                        "place_of_worship"
                     ]
                 ]
             ],
@@ -1110,7 +1053,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -1121,8 +1064,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Parliament"
+                    "class",
+                    "parliament"
                 ]
             ],
             "layout": {
@@ -1163,7 +1106,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -1174,8 +1117,8 @@
                 ],
                 [
                     "==",
-                    "type",
-                    "Hospital"
+                    "class",
+                    "hospital"
                 ]
             ],
             "layout": {
@@ -1216,7 +1159,7 @@
                 "mapbox:group": "1452776685487.2012"
             },
             "source": "vector",
-            "source-layer": "poi_label",
+            "source-layer": "poi",
             "minzoom": 5,
             "filter": [
                 "all",
@@ -1227,10 +1170,10 @@
                 ],
                 [
                     "in",
-                    "type",
-                    "Ferry Terminal",
-                    "Harbour",
-                    "Marina"
+                    "class",
+                    "ferry_terminal",
+                    "harbor",
+                    "marina"
                 ]
             ],
             "layout": {
@@ -1268,7 +1211,7 @@
                 "mapbox:group": "1457010208438.9548"
             },
             "source": "vector",
-            "source-layer": "rail_station_label",
+            "source-layer": "poi",
             "minzoom": 16,
             "filter": [
                 "all",
@@ -1279,8 +1222,13 @@
                 ],
                 [
                     "==",
-                    "maki",
+                    "class",
                     "entrance"
+                ],
+                [
+                    "==",
+                    "subclass",
+                    "subway-entrance"
                 ]
             ],
             "layout": {
@@ -1359,7 +1307,7 @@
             "id": "water_label",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "water_label",
+            "source-layer": "water_name",
             "minzoom": 5,
             "filter": [
                 "==",
@@ -1398,7 +1346,7 @@
             "id": "place_label_island",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "place_label",
+            "source-layer": "place",
             "minzoom": 10,
             "filter": [
                 "all",
@@ -1409,14 +1357,19 @@
                 ],
                 [
                     "in",
-                    "type",
+                    "class",
                     "island",
                     "islet"
                 ],
                 [
-                    "==",
-                    "localrank",
-                    1
+                    "in",
+                    "rank",
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
                 ]
             ],
             "layout": {
@@ -1455,7 +1408,7 @@
             "id": "road_street_label",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "road_label",
+            "source-layer": "transportation_name",
             "filter": [
                 "all",
                 [
@@ -1478,7 +1431,8 @@
                         "service",
                         "street",
                         "street_limited",
-                        "tertiary"
+                        "tertiary",
+                        "minor"
                     ]
                 ]
             ],
@@ -1527,7 +1481,7 @@
             "id": "road_primary_label",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "road_label",
+            "source-layer": "transportation_name",
             "filter": [
                 "all",
                 [
@@ -1588,7 +1542,7 @@
             "id": "place_label_other",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "place_label",
+            "source-layer": "place",
             "minzoom": 8,
             "filter": [
                 "all",
@@ -1599,7 +1553,7 @@
                 ],
                 [
                     "in",
-                    "type",
+                    "class",
                     "hamlet",
                     "neighbourhood",
                     "suburb",
@@ -1638,7 +1592,7 @@
             "id": "place_label_city",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "place_label",
+            "source-layer": "place",
             "maxzoom": 13,
             "filter": [
                 "all",
@@ -1649,7 +1603,7 @@
                 ],
                 [
                     "==",
-                    "type",
+                    "class",
                     "city"
                 ]
             ],
@@ -1699,12 +1653,20 @@
             "id": "country_label",
             "type": "symbol",
             "source": "vector",
-            "source-layer": "country_label",
+            "source-layer": "poi",
             "maxzoom": 12,
             "filter": [
-                "==",
-                "$type",
-                "Point"
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "Point"
+                ],
+                [
+                    "==",
+                    "class",
+                    "country"
+                ]
             ],
             "layout": {
                 "text-field": "{name}",
