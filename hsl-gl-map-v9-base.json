@@ -3305,7 +3305,7 @@
             "id": "admin_country",
             "type": "line",
             "source": "vector",
-            "source-layer": "admin",
+            "source-layer": "boundary",
             "filter": [
                 "all",
                 [
