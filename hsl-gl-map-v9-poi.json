@@ -78,7 +78,7 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "rail_station_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "maxzoom": 16,
       "interactive": true,
@@ -91,8 +91,13 @@
         ],
         [
           "==",
-          "network",
-          "rail-metro"
+          "class",
+          "railway"
+        ],
+        [
+          "==",
+          "subclass",
+          "subway"
         ]
       ],
       "layout": {
@@ -147,7 +152,7 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "poi_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "interactive": true,
       "filter": [
@@ -159,8 +164,13 @@
         ],
         [
           "==",
-          "type",
-          "Bus Station"
+          "class",
+          "bus"
+        ],
+        [
+          "==",
+          "subclass",
+          "bus_station"
         ]
       ],
       "layout": {
@@ -215,7 +225,7 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "rail_station_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "interactive": true,
       "filter": [
@@ -226,17 +236,22 @@
           "Point"
         ],
         [
+          "==",
+          "class",
+          "railway"
+        ],
+        [
+          "==",
+          "subclass",
+          "station"
+        ],
+        [
           "all",
           [
             "!in",
             "name",
             "Maisemajuna",
             "Pasilan autojuna-asema"
-          ],
-          [
-            "==",
-            "network",
-            "rail"
           ]
         ]
       ],
@@ -319,7 +334,7 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "airport_label",
+      "source-layer": "aerodrome_label",
       "minzoom": 5,
       "interactive": true,
       "filter": [
