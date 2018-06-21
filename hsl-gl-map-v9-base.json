@@ -577,7 +577,7 @@
             "id": "landuse_barrier_rock",
             "type": "fill",
             "source": "vector",
-            "source-layer": "landuse",
+            "source-layer": "landcover",
             "filter": [
                 "all",
                 [
