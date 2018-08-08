@@ -1492,7 +1492,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 3,
+                    "base": 5,
                     "stops": [
                         [
                             10,
@@ -1557,7 +1557,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 3,
+                    "base": 5,
                     "stops": [
                         [
                             10,
@@ -1613,8 +1613,6 @@
                 ]
             ],
             "layout": {
-                "text-allow-overlap": true,
-                "text-ignore-placement": true,
                 "text-field": "{name}",
                 "text-font": [
                     "Gotham Rounded Book"
