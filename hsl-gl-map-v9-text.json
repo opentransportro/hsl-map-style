@@ -177,7 +177,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -228,7 +228,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -281,7 +281,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -351,7 +351,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -402,7 +402,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -574,7 +574,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -697,7 +697,7 @@
                 ],
                 "text-anchor": "top",
                 "text-field": "{name}",
-                "visibility": "visible"
+                "visibility": "none"
             },
             "paint": {
                 "text-color": "rgba(142,166,109,1)",
@@ -817,7 +817,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -870,7 +870,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -923,7 +923,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -976,7 +976,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -1030,7 +1030,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -1091,7 +1091,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -1144,7 +1144,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
@@ -1197,7 +1197,7 @@
                 "text-font": [
                     "Gotham Rounded Medium"
                 ],
-                "visibility": "visible",
+                "visibility": "none",
                 "text-anchor": "top",
                 "text-field": "{name}",
                 "text-max-width": 8
