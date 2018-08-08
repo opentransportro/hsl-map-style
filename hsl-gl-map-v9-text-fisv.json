@@ -164,6 +164,8 @@
                 ]
             ],
             "layout": {
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}   {name_sv_nodefault}",
                 "text-font": [
@@ -171,7 +173,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 1.4,
+                    "base": 3,
                     "stops": [
                         [
                             10,
@@ -226,6 +228,8 @@
                 ]
             ],
             "layout": {
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}   {name_sv_nodefault}",
                 "text-font": [
@@ -233,7 +237,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 1.4,
+                    "base": 3,
                     "stops": [
                         [
                             10,

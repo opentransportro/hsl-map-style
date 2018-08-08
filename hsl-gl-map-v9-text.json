@@ -92,7 +92,7 @@
                             8
                         ],
                         [
-                            22,
+                            18,
                             17
                         ]
                     ]
@@ -1483,6 +1483,8 @@
                 ]
             ],
             "layout": {
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}",
                 "text-font": [
@@ -1490,7 +1492,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 1.4,
+                    "base": 3,
                     "stops": [
                         [
                             10,
@@ -1498,7 +1500,7 @@
                         ],
                         [
                             20,
-                            14
+                            12
                         ]
                     ]
                 },
@@ -1528,6 +1530,7 @@
             "type": "symbol",
             "source": "vector",
             "source-layer": "road_label",
+            "minzoom": 0,
             "filter": [
                 "all",
                 [
@@ -1545,6 +1548,8 @@
                 ]
             ],
             "layout": {
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}",
                 "text-font": [
@@ -1552,7 +1557,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 1.4,
+                    "base": 3,
                     "stops": [
                         [
                             10,
@@ -1560,7 +1565,7 @@
                         ],
                         [
                             20,
-                            14
+                            12
                         ]
                     ]
                 },
@@ -1608,6 +1613,8 @@
                 ]
             ],
             "layout": {
+                "text-allow-overlap": true,
+                "text-ignore-placement": true,
                 "text-field": "{name}",
                 "text-font": [
                     "Gotham Rounded Book"

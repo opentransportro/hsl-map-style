@@ -13,23 +13,23 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@mapbox/shelf-pack/-/shelf-pack-3.0.0.tgz#44e284c8336eeda1e9dbbb1d61954c70e26e5766"
 
-"@mapbox/spritezero-cli@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@mapbox/spritezero-cli/-/spritezero-cli-2.0.0.tgz#7399987dffec6e8161a276bff9564089f1f90a55"
+"@mapbox/spritezero-cli@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/spritezero-cli/-/spritezero-cli-2.1.0.tgz#457a786710b2afaca11b92dc584d15f326244575"
   dependencies:
-    "@mapbox/spritezero" "~4.0.0"
+    "@mapbox/spritezero" "~5.0.0"
     json-stable-stringify "^1.0.1"
     minimist "^1.2.0"
     multiline "^1.0.2"
     queue-async "^1.2.1"
 
-"@mapbox/spritezero@~4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@mapbox/spritezero/-/spritezero-4.0.1.tgz#04b66d4a6e5f07a650a5cde92b3cb849572fd6e2"
+"@mapbox/spritezero@~5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/spritezero/-/spritezero-5.0.0.tgz#eba7d76a519e8bb15aeb1464329381d6301f040e"
   dependencies:
     "@mapbox/shelf-pack" "~3.0.0"
     json-stable-stringify "^1.0.1"
-    mapnik "3.5.14"
+    mapnik "~3.6.0"
     queue-async "^1.2.1"
     xtend "^4.0.1"
 
@@ -1353,18 +1353,18 @@ map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
-mapnik-vector-tile@~1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/mapnik-vector-tile/-/mapnik-vector-tile-1.2.2.tgz#42795ca211dd274a9a4af5bf6cfe3b0bfe0ba243"
+mapnik-vector-tile@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/mapnik-vector-tile/-/mapnik-vector-tile-1.4.0.tgz#f46742514cd3ad3554c5d640614804fe9beb49e5"
 
-mapnik@3.5.14:
-  version "3.5.14"
-  resolved "https://registry.yarnpkg.com/mapnik/-/mapnik-3.5.14.tgz#632bd6635c72c0214a707549309ba416594afff7"
+mapnik@~3.6.0:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/mapnik/-/mapnik-3.6.2.tgz#49caaab7d97c04d4399b32e6a98ec2b1659f218c"
   dependencies:
-    mapnik-vector-tile "~1.2.2"
-    nan "~2.4.0"
+    mapnik-vector-tile "1.4.0"
+    nan "~2.5.0"
     node-pre-gyp "~0.6.30"
-    protozero "~1.4.2"
+    protozero "1.5.1"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -1460,9 +1460,9 @@ nan@^2.1.0, nan@^2.3.0:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
-nan@~2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.4.0.tgz#fb3c59d45fe4effe215f0b890f8adf6eb32d2232"
+nan@~2.5.0:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.5.1.tgz#d5b01691253326a97a2bbee9e61c55d8d60351e2"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -1708,9 +1708,9 @@ progress@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/progress/-/progress-1.1.8.tgz#e260c78f6161cdd9b0e56cc3e0a85de17c7a57be"
 
-protozero@~1.4.2:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/protozero/-/protozero-1.4.5.tgz#80eaa80a4f9c751465c4cb2620d8233b50ec1aff"
+protozero@1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/protozero/-/protozero-1.5.1.tgz#5a27df6fb6e1ed743f510812ae76c082f5b16638"
 
 proxy-addr@~1.1.3:
   version "1.1.4"
