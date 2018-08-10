@@ -150,7 +150,7 @@
                         "!in",
                         "name",
                         "Harakan talvipolku",
-                        "Suomenlinnan Huoltotunneli"
+                        "Suomenlinnan huoltotunneli"
                     ],
                     [
                         "in",
@@ -164,7 +164,6 @@
                 ]
             ],
             "layout": {
-                "text-allow-overlap": true,
                 "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}   {name_sv_nodefault}",
@@ -173,7 +172,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 3,
+                    "base": 5,
                     "stops": [
                         [
                             10,
@@ -228,8 +227,9 @@
                 ]
             ],
             "layout": {
-                "text-allow-overlap": true,
                 "text-ignore-placement": true,
+                "icon-ignore-placement": true,
+                "icon-allow-overlap": true,
                 "symbol-placement": "line",
                 "text-field": "{name}   {name_sv_nodefault}",
                 "text-font": [
@@ -237,7 +237,7 @@
                 ],
                 "text-letter-spacing": 0.1,
                 "text-size": {
-                    "base": 3,
+                    "base": 5,
                     "stops": [
                         [
                             10,

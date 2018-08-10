@@ -1455,6 +1455,7 @@
             "id": "road_street_label",
             "type": "symbol",
             "source": "vector",
+            "minzoom": 10,
             "source-layer": "road_label",
             "filter": [
                 "all",
@@ -1469,7 +1470,7 @@
                         "!in",
                         "name",
                         "Harakan talvipolku",
-                        "Suomenlinnan Huoltotunneli"
+                        "Suomenlinnan huoltotunneli"
                     ],
                     [
                         "in",
@@ -1483,7 +1484,6 @@
                 ]
             ],
             "layout": {
-                "text-allow-overlap": true,
                 "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}",
@@ -1530,7 +1530,7 @@
             "type": "symbol",
             "source": "vector",
             "source-layer": "road_label",
-            "minzoom": 0,
+            "minzoom": 10,
             "filter": [
                 "all",
                 [
@@ -1548,7 +1548,6 @@
                 ]
             ],
             "layout": {
-                "text-allow-overlap": true,
                 "text-ignore-placement": true,
                 "symbol-placement": "line",
                 "text-field": "{name}",
