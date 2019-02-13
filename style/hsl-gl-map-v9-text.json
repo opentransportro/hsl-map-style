@@ -1,65 +1,17 @@
 {
   "layers": [
     {
-      "id": "road_waterway",
-      "type": "symbol",
-      "source": "vector",
-      "source-layer": "road_label",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "LineString"
-        ],
-        [
-          "==",
-          "class",
-          "ferry"
-        ]
-      ],
-      "layout": {
-        "symbol-placement": "line",
-        "text-field": "{name}",
-        "text-font": [
-          "Gotham Rounded Book"
-        ],
-        "text-transform": "none",
-        "text-letter-spacing": 0,
-        "text-size": {
-          "base": 1.4,
-          "stops": [
-            [
-              10,
-              7
-            ],
-            [
-              20,
-              20
-            ]
-          ]
-        },
-        "text-padding": 2
-      },
-      "paint": {
-        "text-color": "#39c6ea",
-        "text-halo-color": "#bee4f8",
-        "text-halo-width": 2
-      }
-    },
-    {
       "id": "housenum_label",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "housenum_label",
+      "source-layer": "housenumber",
       "filter": [
         "==",
         "$type",
         "Point"
       ],
       "layout": {
-        "text-field": "{house_num}",
+        "text-field": "{housenumber}",
         "text-size": {
           "stops": [
             [
@@ -88,7 +40,7 @@
         "mapbox:group": "1457010362398.355"
       },
       "source": "vector",
-      "source-layer": "poi_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "filter": [
         "all",
@@ -99,32 +51,32 @@
         ],
         [
           "in",
-          "type",
-          "Bed And Breakfast",
-          "Hostel",
-          "Hotel",
-          "Cinema",
-          "Cemetery",
-          "Library",
-          "Public Building",
-          "Arts Centre",
-          "Mall",
-          "Concert Hall",
-          "Theatre",
-          "Hospital",
-          "Playground",
-          "Kindergarten",
-          "School",
-          "University",
-          "College",
-          "Museum",
-          "Stadium",
-          "Attraction",
-          "Transportation",
-          "Monument",
-          "Theme Park",
-          "Place Of Worship",
-          "Parliament"
+          "class",
+          "bed and breakfast",
+          "hostel",
+          "hotel",
+          "cinema",
+          "cemetery",
+          "library",
+          "public building",
+          "arts Centre",
+          "mall",
+          "concert hall",
+          "theatre",
+          "hospital",
+          "playground",
+          "kindergarten",
+          "school",
+          "university",
+          "college",
+          "museum",
+          "stadium",
+          "attraction",
+          "transportation",
+          "monument",
+          "theme park",
+          "place of worship",
+          "parliament"
         ]
       ],
       "layout": {
@@ -163,7 +115,7 @@
         "mapbox:group": "1457010362398.355"
       },
       "source": "vector",
-      "source-layer": "poi_label",
+      "source-layer": "poi",
       "minzoom": 13,
       "filter": [
         "all",
@@ -174,16 +126,9 @@
         ],
         [
           "in",
-          "type",
-          "Stadium",
-          "Sports Centre"
-        ],
-        [
-          "in",
-          "scalerank",
-          1,
-          2,
-          3
+          "class",
+          "stadium",
+          "sports centre"
         ]
       ],
       "layout": {
@@ -222,7 +167,7 @@
         "mapbox:group": "1452776685487.2012"
       },
       "source": "vector",
-      "source-layer": "poi_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "filter": [
         "all",
@@ -234,25 +179,9 @@
         [
           "all",
           [
-            "==",
-            "type",
-            "Park"
-          ],
-          [
             "in",
-            "localrank",
-            1,
-            2,
-            3,
-            4
-          ],
-          [
-            "in",
-            "scalerank",
-            1,
-            2,
-            3,
-            4
+            "class",
+            "park"
           ]
         ]
       ],
@@ -291,7 +220,7 @@
         "mapbox:group": "1452776685487.2012"
       },
       "source": "vector",
-      "source-layer": "road_label",
+      "source-layer": "transportation_name",
       "minzoom": 5,
       "filter": [
         "all",
@@ -342,7 +271,7 @@
         "mapbox:group": "1452776685487.2012"
       },
       "source": "vector",
-      "source-layer": "poi_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "filter": [
         "all",
@@ -353,10 +282,10 @@
         ],
         [
           "in",
-          "type",
-          "Ferry Terminal",
-          "Harbour",
-          "Marina"
+          "class",
+          "ferry_terminal",
+          "harbor",
+          "marina"
         ]
       ],
       "layout": {
@@ -394,7 +323,7 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "rail_station_label",
+      "source-layer": "poi",
       "minzoom": 16,
       "filter": [
         "all",
@@ -404,9 +333,14 @@
           "Point"
         ],
         [
-          "==",
-          "maki",
+          "in",
+          "class",
           "entrance"
+        ],
+        [
+          "in",
+          "subclass",
+          "subway_entrance"
         ]
       ],
       "layout": {
@@ -524,7 +458,7 @@
       "id": "place_label_island",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "place_label",
+      "source-layer": "place",
       "minzoom": 10,
       "filter": [
         "all",
@@ -535,14 +469,14 @@
         ],
         [
           "in",
-          "type",
+          "class",
           "island",
           "islet"
         ],
         [
           "==",
-          "localrank",
-          1
+          "rank",
+          6
         ]
       ],
       "layout": {
@@ -581,7 +515,7 @@
       "id": "road_street_label",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "road_label",
+      "source-layer": "transportation_name",
       "filter": [
         "all",
         [
@@ -653,7 +587,7 @@
       "id": "road_primary_label",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "road_label",
+      "source-layer": "transportation_name",
       "filter": [
         "all",
         [
@@ -714,7 +648,7 @@
       "id": "place_label_other",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "place_label",
+      "source-layer": "place",
       "minzoom": 8,
       "filter": [
         "all",
@@ -725,7 +659,7 @@
         ],
         [
           "in",
-          "type",
+          "class",
           "hamlet",
           "neighbourhood",
           "suburb",
@@ -764,7 +698,7 @@
       "id": "place_label_city",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "place_label",
+      "source-layer": "place",
       "maxzoom": 13,
       "filter": [
         "all",
@@ -775,7 +709,7 @@
         ],
         [
           "==",
-          "type",
+          "class",
           "city"
         ]
       ],
@@ -825,12 +759,24 @@
       "id": "country_label",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "country_label",
+      "source-layer": "place",
       "maxzoom": 12,
       "filter": [
-        "==",
-        "$type",
-        "Point"
+        "all",
+        [
+          "==",
+          "$type",
+          "Point"
+        ],
+        [
+          "==",
+          "class",
+          "country"
+        ],
+        [
+          "has",
+          "iso_a2"
+        ]
       ],
       "layout": {
         "text-field": "{name}\n{name_sv_nodefault}",
@@ -863,7 +809,7 @@
       "id": "road_street_label_fisv",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "road_label",
+      "source-layer": "transportation_name",
       "filter": [
         "all",
         [
@@ -886,7 +832,8 @@
             "service",
             "street",
             "street_limited",
-            "tertiary"
+            "tertiary",
+            "minor"
           ]
         ]
       ],
@@ -935,7 +882,7 @@
       "id": "road_primary_label_fisv",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "road_label",
+      "source-layer": "transportation_name",
       "filter": [
         "all",
         [
@@ -995,7 +942,7 @@
   ],
   "sources": {
     "vector": {
-      "url": "https://cdn.digitransit.fi/map/v1/hsl-vector-map/index.json",
+      "url": "https://maps.tilehosting.com/data/v3.json?key=JrASl0d6TLN2193iN5RS",
       "type": "vector"
     }
   },

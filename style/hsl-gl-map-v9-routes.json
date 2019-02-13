@@ -13,12 +13,8 @@
         [
           "!in",
           "routeId",
-          "1500",
-          "2200",
-          "2510",
           "2550",
-          "4560",
-          "4570"
+          "4560"
         ],
         [
           "==",
@@ -31,7 +27,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -68,12 +63,8 @@
         [
           "!in",
           "routeId",
-          "1500",
-          "2200",
-          "2510",
           "2550",
-          "4560",
-          "4570"
+          "4560"
         ],
         [
           "==",
@@ -86,7 +77,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -113,11 +103,37 @@
     },
     {
       "id": "bus_route_inner",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1457010660461.3042"
       },
-      "ref": "bus_route",
-      "interactive": true,
+      "source": "routes",
+      "source-layer": "routes",
+      "filter": [
+        "all",
+        [
+          "!in",
+          "routeId",
+          "2550",
+          "4560"
+        ],
+        [
+          "==",
+          "mode",
+          "BUS"
+        ],
+        [
+          "!=",
+          "hasRegularDayDepartures",
+          false
+        ]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round",
+        "line-round-limit": 1
+      },
       "paint": {
         "line-color": "#3395d4",
         "line-width": {
@@ -158,7 +174,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -203,7 +218,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -230,11 +244,31 @@
     },
     {
       "id": "tram_route_inner",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1457010660461.3042"
       },
-      "ref": "tram_route",
-      "interactive": true,
+      "source": "routes",
+      "source-layer": "routes",
+      "filter": [
+        "all",
+        [
+          "==",
+          "mode",
+          "TRAM"
+        ],
+        [
+          "!=",
+          "hasRegularDayDepartures",
+          false
+        ]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round",
+        "line-round-limit": 1
+      },
       "paint": {
         "line-color": "#00bb75",
         "line-width": {
@@ -267,12 +301,8 @@
         [
           "in",
           "routeId",
-          "1500",
-          "2200",
-          "2510",
           "2550",
-          "4560",
-          "4570"
+          "4560"
         ],
         [
           "!=",
@@ -280,7 +310,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -317,12 +346,8 @@
         [
           "in",
           "routeId",
-          "1500",
-          "2200",
-          "2510",
           "2550",
-          "4560",
-          "4570"
+          "4560"
         ],
         [
           "!=",
@@ -330,7 +355,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -357,11 +381,32 @@
     },
     {
       "id": "trunk_route_inner",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1457010660461.3042"
       },
-      "ref": "trunk_route",
-      "interactive": true,
+      "source": "routes",
+      "source-layer": "routes",
+      "filter": [
+        "all",
+        [
+          "in",
+          "routeId",
+          "2550",
+          "4560"
+        ],
+        [
+          "!=",
+          "hasRegularDayDepartures",
+          false
+        ]
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round",
+        "line-join": "round",
+        "line-round-limit": 1
+      },
       "paint": {
         "line-color": "#FF6319",
         "line-width": {
@@ -446,7 +491,6 @@
           false
         ]
       ],
-      "interactive": true,
       "layout": {
         "visibility": "visible",
         "line-cap": "round",
@@ -476,10 +520,27 @@
     },
     {
       "id": "subway",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1457010660461.3042"
       },
-      "ref": "subway_case",
+      "source": "subway",
+      "filter": [
+        "all",
+        [
+          "==",
+          "underground",
+          "false"
+        ],
+        [
+          "!=",
+          "hasRegularDayDepartures",
+          false
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "#fff",
         "line-dasharray": [
@@ -599,10 +660,27 @@
     },
     {
       "id": "rail",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1457010660461.3042"
       },
-      "ref": "rail_case",
+      "source": "rail",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "!=",
+          "hasRegularDayDepartures",
+          false
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "#fff",
         "line-dasharray": [
@@ -627,47 +705,6 @@
           ]
         }
       }
-    },
-    {
-      "id": "Stops_rail",
-      "metadata": {
-        "mapbox:group": "1455204550197.1404"
-      },
-      "ref": "Stops case rail",
-      "interactive": true,
-      "paint": {
-        "circle-color": "#8c54a2",
-        "circle-radius": {
-          "base": 1.15,
-          "stops": [
-            [
-              11.9,
-              0
-            ],
-            [
-              12,
-              1
-            ],
-            [
-              22,
-              24
-            ]
-          ]
-        },
-        "circle-opacity": {
-          "base": 1,
-          "stops": [
-            [
-              11,
-              0.6
-            ],
-            [
-              14,
-              1
-            ]
-          ]
-        }
-      }
     }
   ],
   "sources": {
@@ -688,10 +725,6 @@
     "mapbox:groups": {
       "1457010660461.3042": {
         "name": "Routes",
-        "collapsed": true
-      },
-      "1455204550197.1404": {
-        "name": "Stops",
         "collapsed": true
       }
     }

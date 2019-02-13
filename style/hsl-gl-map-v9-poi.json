@@ -9,7 +9,6 @@
       "source": "parkandride",
       "source-layer": "hubs",
       "minzoom": 14,
-      "interactive": true,
       "filter": [
         "==",
         "$type",
@@ -66,10 +65,9 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "rail_station_label",
+      "source-layer": "poi",
       "minzoom": 5,
       "maxzoom": 16,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -79,8 +77,13 @@
         ],
         [
           "==",
-          "network",
-          "rail-metro"
+          "class",
+          "railway"
+        ],
+        [
+          "==",
+          "subclass",
+          "subway"
         ]
       ],
       "layout": {
@@ -135,9 +138,8 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "poi_label",
+      "source-layer": "poi",
       "minzoom": 5,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -147,8 +149,13 @@
         ],
         [
           "==",
-          "type",
-          "Bus Station"
+          "class",
+          "bus"
+        ],
+        [
+          "==",
+          "subclass",
+          "bus_station"
         ]
       ],
       "layout": {
@@ -203,9 +210,8 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "rail_station_label",
+      "source-layer": "poi",
       "minzoom": 5,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -223,8 +229,13 @@
           ],
           [
             "==",
-            "network",
-            "rail"
+            "class",
+            "railway"
+          ],
+          [
+            "==",
+            "subclass",
+            "station"
           ]
         ]
       ],
@@ -307,9 +318,8 @@
         "mapbox:group": "1457010208438.9548"
       },
       "source": "vector",
-      "source-layer": "airport_label",
+      "source-layer": "poi",
       "minzoom": 5,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -376,7 +386,7 @@
       "type": "vector"
     },
     "vector": {
-      "url": "https://cdn.digitransit.fi/map/v1/hsl-vector-map/index.json",
+      "url": "https://maps.tilehosting.com/data/v3.json?key=JrASl0d6TLN2193iN5RS",
       "type": "vector"
     }
   },

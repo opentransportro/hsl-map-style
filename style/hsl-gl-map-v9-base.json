@@ -59,10 +59,10 @@
       "id": "landuse_park",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
         "==",
-        "class",
+        "subclass",
         "park"
       ],
       "layout": {
@@ -78,9 +78,17 @@
       "source": "vector",
       "source-layer": "landuse",
       "filter": [
-        "==",
-        "type",
-        "playground"
+        "all",
+        [
+          "==",
+          "$type",
+          "Polygon"
+        ],
+        [
+          "==",
+          "class",
+          "playground"
+        ]
       ],
       "layout": {
         "visibility": "visible"
@@ -93,7 +101,7 @@
       "id": "landuse_wood",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
         "in",
         "class",
@@ -146,12 +154,23 @@
       "id": "landuse_grass",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
-        "==",
-        "class",
-        "grass"
+        "all",
+        [
+          "==",
+          "class",
+          "grass"
+        ],
+        [
+          "!in",
+          "subclass",
+          "park"
+        ]
       ],
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "fill-color": "rgba(208,227,184,1)"
       }
@@ -160,7 +179,7 @@
       "id": "landuse_sand",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
         "==",
         "class",
@@ -174,7 +193,7 @@
       "id": "landuse_scrub",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
         "==",
         "class",
@@ -204,11 +223,11 @@
       "id": "landuse_agriculture",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
         "==",
         "class",
-        "agriculture"
+        "farmland"
       ],
       "paint": {
         "fill-color": "#e3ecc5"
@@ -325,7 +344,7 @@
       "source-layer": "aeroway",
       "filter": [
         "==",
-        "type",
+        "class",
         "runway"
       ],
       "layout": {
@@ -357,7 +376,7 @@
       "source-layer": "aeroway",
       "filter": [
         "==",
-        "type",
+        "class",
         "taxiway"
       ],
       "layout": {
@@ -443,7 +462,7 @@
       "id": "landuse_wetland",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse_overlay",
+      "source-layer": "landcover",
       "filter": [
         "==",
         "class",
@@ -562,7 +581,7 @@
       "id": "landuse_barrier_rock",
       "type": "fill",
       "source": "vector",
-      "source-layer": "landuse",
+      "source-layer": "landcover",
       "filter": [
         "all",
         [
@@ -588,7 +607,7 @@
       "id": "road_street_limited",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -674,7 +693,7 @@
       "id": "road_service_polygon",
       "type": "fill",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -684,7 +703,7 @@
         ],
         [
           "==",
-          "type",
+          "class",
           "service"
         ]
       ],
@@ -699,7 +718,7 @@
       "id": "road_pedestrian",
       "type": "fill",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -709,7 +728,7 @@
         ],
         [
           "in",
-          "type",
+          "subclass",
           "pedestrian",
           "platform"
         ]
@@ -769,7 +788,13 @@
     },
     {
       "id": "building",
-      "ref": "building_shadow",
+      "type": "fill",
+      "source": "vector",
+      "source-layer": "building",
+      "minzoom": 10,
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "fill-color": "#e2e4e9",
         "fill-outline-color": {
@@ -796,7 +821,7 @@
       "id": "tunnel_walk",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "minzoom": 16,
       "filter": [
         "all",
@@ -819,7 +844,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ]
         ]
@@ -853,7 +878,7 @@
       "id": "tunnel_major_rail",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -875,7 +900,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ]
         ]
@@ -926,7 +951,7 @@
       "id": "tunnel_primary",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -938,12 +963,12 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ],
           [
             "in",
-            "type",
+            "class",
             "primary",
             "secondary"
           ]
@@ -987,7 +1012,7 @@
       "id": "tunnel_motorway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -999,7 +1024,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ],
           [
@@ -1048,7 +1073,7 @@
       "id": "tunnel_street",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1060,16 +1085,13 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ],
           [
             "in",
             "class",
-            "",
-            "street",
-            "street_limited",
-            "tertiary"
+            "minor"
           ]
         ]
       ],
@@ -1111,7 +1133,7 @@
       "id": "tunnel_service",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1128,7 +1150,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ]
         ]
@@ -1171,7 +1193,7 @@
       "id": "tunnel_subway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1194,16 +1216,16 @@
           [
             "==",
             "class",
-            "major_rail"
+            "transit"
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ],
           [
             "==",
-            "type",
+            "subclass",
             "subway"
           ]
         ]
@@ -1254,7 +1276,7 @@
       "id": "tunnel_road_path_cycleway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1266,7 +1288,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "tunnel"
           ],
           [
@@ -1307,12 +1329,12 @@
       "id": "road_subway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
           "!=",
-          "structure",
+          "brunnel",
           "tunnel"
         ],
         [
@@ -1350,12 +1372,12 @@
       "id": "road_subway_service",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
           "!=",
-          "structure",
+          "brunnel",
           "tunnel"
         ],
         [
@@ -1418,7 +1440,28 @@
     },
     {
       "id": "waterway",
-      "ref": "waterway_case",
+      "type": "line",
+      "source": "vector",
+      "source-layer": "waterway",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "in",
+          "class",
+          "canal",
+          "river",
+          "stream"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
       "paint": {
         "line-color": "#bee4f8",
         "line-width": {
@@ -1440,7 +1483,7 @@
       "id": "road_ferry",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "minzoom": 11,
       "filter": [
         "all",
@@ -1500,7 +1543,7 @@
       "id": "road_major_rail_solid",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1510,14 +1553,14 @@
         ],
         [
           "!in",
-          "structure",
+          "brunnel",
           "bridge",
           "tunnel"
         ],
         [
           "==",
           "class",
-          "major_rail"
+          "rail"
         ]
       ],
       "layout": {
@@ -1544,7 +1587,7 @@
       "id": "road_path_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1556,7 +1599,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -1570,34 +1613,30 @@
       "layout": {
         "line-cap": "round",
         "line-join": "round",
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
-        "line-color": "#d5dae3",
+        "line-color": "#ccc",
         "line-width": {
           "base": 1.55,
           "stops": [
             [
-              0,
-              2
+              4,
+              1
             ],
             [
-              22,
-              30
+              20,
+              54
             ]
           ]
-        },
-        "line-dasharray": [
-          0,
-          0
-        ]
+        }
       }
     },
     {
       "id": "road_path",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1609,7 +1648,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -1617,6 +1656,12 @@
             "!in",
             "type",
             "cycleway",
+            "steps"
+          ],
+          [
+            "!in",
+            "subclass",
+            "platform",
             "steps"
           ],
           [
@@ -1628,7 +1673,8 @@
       ],
       "layout": {
         "line-cap": "round",
-        "line-join": "round"
+        "line-join": "round",
+        "visibility": "visible"
       },
       "paint": {
         "line-color": "#fff",
@@ -1656,7 +1702,7 @@
       "id": "road_path_MTB",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1668,7 +1714,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -1720,7 +1766,7 @@
       "id": "road_path_steps_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1732,7 +1778,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -1743,7 +1789,7 @@
           ],
           [
             "==",
-            "type",
+            "subclass",
             "steps"
           ]
         ]
@@ -1787,7 +1833,7 @@
       "id": "road_path_steps",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1799,7 +1845,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -1810,7 +1856,7 @@
           ],
           [
             "==",
-            "type",
+            "subclass",
             "steps"
           ]
         ]
@@ -1860,7 +1906,7 @@
       "id": "road_path_cycleway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1872,13 +1918,13 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
           [
             "in",
-            "type",
+            "subclass",
             "cycleway",
             "pedestrian",
             "track"
@@ -1914,7 +1960,7 @@
       "id": "road_service",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1926,7 +1972,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -1962,7 +2008,7 @@
       "id": "road_motorway_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -1974,7 +2020,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -2011,7 +2057,7 @@
       "id": "road_primary_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2023,7 +2069,7 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
@@ -2060,7 +2106,7 @@
       "id": "road_street_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2072,15 +2118,14 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
           [
             "in",
             "class",
-            "street",
-            "tertiary"
+            "minor"
           ]
         ]
       ],
@@ -2109,7 +2154,7 @@
       "id": "road_construction",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2181,7 +2226,7 @@
       "id": "road_motorway_link_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2193,21 +2238,19 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
           [
             "in",
             "class",
-            "link",
-            "motorway_link"
+            "trunk"
           ],
           [
             "in",
-            "type",
-            "motorway_link",
-            "trunk_link"
+            "ramp",
+            1
           ]
         ]
       ],
@@ -2236,7 +2279,7 @@
       "id": "road_link_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2247,14 +2290,14 @@
         [
           "all",
           [
-            "!=",
-            "type",
-            "trunk_link"
-          ],
-          [
             "==",
             "class",
-            "link"
+            "primary"
+          ],
+          [
+            "in",
+            "ramp",
+            1
           ]
         ]
       ],
@@ -2283,7 +2326,7 @@
       "id": "road_motorway_link",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2295,21 +2338,19 @@
           "all",
           [
             "!in",
-            "structure",
+            "brunnel",
             "bridge",
             "tunnel"
           ],
           [
             "in",
             "class",
-            "link",
-            "motorway_link"
+            "trunk"
           ],
           [
             "in",
-            "type",
-            "motorway_link",
-            "trunk_link"
+            "ramp",
+            1
           ]
         ]
       ],
@@ -2350,7 +2391,7 @@
       "id": "road_link",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2361,14 +2402,14 @@
         [
           "all",
           [
-            "!=",
-            "type",
-            "trunk_link"
-          ],
-          [
             "==",
             "class",
-            "link"
+            "primary"
+          ],
+          [
+            "in",
+            "ramp",
+            1
           ]
         ]
       ],
@@ -2395,7 +2436,37 @@
     },
     {
       "id": "road_street",
-      "ref": "road_street_case",
+      "type": "line",
+      "source": "vector",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "all",
+          [
+            "in",
+            "class",
+            "minor",
+            "tertiary"
+          ],
+          [
+            "!in",
+            "brunnel",
+            "bridge",
+            "tunnel"
+          ]
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "rgba(255,255,255,1)",
         "line-width": {
@@ -2415,7 +2486,36 @@
     },
     {
       "id": "road_primary",
-      "ref": "road_primary_case",
+      "type": "line",
+      "source": "vector",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "all",
+          [
+            "!in",
+            "brunnel",
+            "bridge",
+            "tunnel"
+          ],
+          [
+            "in",
+            "class",
+            "primary",
+            "secondary"
+          ]
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
       "paint": {
         "line-color": {
           "base": 1,
@@ -2447,7 +2547,36 @@
     },
     {
       "id": "road_motorway",
-      "ref": "road_motorway_case",
+      "type": "line",
+      "source": "vector",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "all",
+          [
+            "!in",
+            "brunnel",
+            "bridge",
+            "tunnel"
+          ],
+          [
+            "in",
+            "class",
+            "motorway",
+            "trunk"
+          ]
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
       "paint": {
         "line-color": {
           "base": 1,
@@ -2481,23 +2610,23 @@
       "id": "road_minor_rail",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
           "!in",
-          "structure",
+          "brunnel",
           "bridge",
           "tunnel"
         ],
         [
           "==",
           "class",
-          "minor_rail"
+          "transit"
         ],
         [
           "==",
-          "type",
+          "subclass",
           "tram"
         ]
       ],
@@ -2552,7 +2681,7 @@
       "id": "bridge_major_rail_case_bg",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2574,7 +2703,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ]
         ]
@@ -2598,7 +2727,35 @@
     },
     {
       "id": "bridge_major_rail_case",
-      "ref": "bridge_major_rail_case_bg",
+      "type": "line",
+      "source": "vector",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "all",
+          [
+            "!=",
+            "type",
+            "subway"
+          ],
+          [
+            "==",
+            "class",
+            "major_rail"
+          ],
+          [
+            "==",
+            "brunnel",
+            "bridge"
+          ]
+        ]
+      ],
       "paint": {
         "line-color": "#ccc",
         "line-width": {
@@ -2633,7 +2790,7 @@
       "id": "bridge_major_rail",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2648,7 +2805,7 @@
         ],
         [
           "==",
-          "structure",
+          "brunnel",
           "bridge"
         ]
       ],
@@ -2676,7 +2833,7 @@
       "id": "bridge_subway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2691,7 +2848,7 @@
         ],
         [
           "==",
-          "structure",
+          "brunnel",
           "bridge"
         ],
         [
@@ -2724,7 +2881,7 @@
       "id": "bridge_path_bg",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2741,7 +2898,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ]
         ]
@@ -2771,7 +2928,7 @@
       "id": "bridge_path_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2788,7 +2945,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ]
         ]
@@ -2830,7 +2987,7 @@
       "id": "bridge_path",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2847,7 +3004,7 @@
           ],
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ]
         ]
@@ -2877,7 +3034,20 @@
       "id": "bridge_pedestrian_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "pedestrian"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ]
+      ],
       "layout": {
         "visibility": "visible",
         "line-join": "round",
@@ -2912,7 +3082,13 @@
             ]
           ]
         }
-      },
+      }
+    },
+    {
+      "id": "bridge_pedestrian",
+      "type": "line",
+      "source": "vector",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2922,16 +3098,13 @@
         ],
         [
           "==",
-          "structure",
+          "brunnel",
           "bridge"
         ]
-      ]
-    },
-    {
-      "id": "bridge_pedestrian",
-      "type": "line",
-      "source": "vector",
-      "source-layer": "road",
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "line-width": {
           "base": 1.55,
@@ -2947,29 +3120,13 @@
           ]
         },
         "line-color": "rgba(255, 255, 255, 1)"
-      },
-      "layout": {
-        "visibility": "visible"
-      },
-      "filter": [
-        "all",
-        [
-          "==",
-          "class",
-          "pedestrian"
-        ],
-        [
-          "==",
-          "structure",
-          "bridge"
-        ]
-      ]
+      }
     },
     {
       "id": "bridge_street_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -2981,7 +3138,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3029,7 +3186,7 @@
       "id": "bridge_primary_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3041,7 +3198,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3076,7 +3233,7 @@
       "id": "bridge_motorway_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3088,7 +3245,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3141,7 +3298,7 @@
       "id": "bridge_street",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3153,7 +3310,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3192,7 +3349,7 @@
       "id": "bridge_primary",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3204,7 +3361,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3240,7 +3397,7 @@
       "id": "bridge_motorway",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3252,7 +3409,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3304,7 +3461,7 @@
       "id": "bridge_motorway_link_case",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3316,7 +3473,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3358,7 +3515,7 @@
       "id": "bridge_motorway_link",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3370,7 +3527,7 @@
           "all",
           [
             "==",
-            "structure",
+            "brunnel",
             "bridge"
           ],
           [
@@ -3424,7 +3581,7 @@
       "id": "bridge_minor_rail",
       "type": "line",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3434,7 +3591,7 @@
         ],
         [
           "==",
-          "structure",
+          "brunnel",
           "bridge"
         ],
         [
@@ -3494,7 +3651,7 @@
       "id": "admin_country",
       "type": "line",
       "source": "vector",
-      "source-layer": "admin",
+      "source-layer": "boundary",
       "filter": [
         "all",
         [
@@ -3541,7 +3698,7 @@
       "id": "road_minor_one-way",
       "type": "symbol",
       "source": "vector",
-      "source-layer": "road",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
@@ -3593,11 +3750,59 @@
         }
       },
       "paint": {}
+    },
+    {
+      "id": "road_waterway",
+      "type": "symbol",
+      "source": "vector",
+      "source-layer": "transportation_name",
+      "minzoom": 12,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "==",
+          "class",
+          "ferry"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name}",
+        "text-font": [
+          "Gotham Rounded Book"
+        ],
+        "text-transform": "none",
+        "text-letter-spacing": 0,
+        "text-size": {
+          "base": 1.4,
+          "stops": [
+            [
+              10,
+              7
+            ],
+            [
+              20,
+              20
+            ]
+          ]
+        },
+        "text-padding": 2
+      },
+      "paint": {
+        "text-color": "#39c6ea",
+        "text-halo-color": "#bee4f8",
+        "text-halo-width": 2
+      }
     }
   ],
   "sources": {
     "vector": {
-      "url": "https://cdn.digitransit.fi/map/v1/hsl-vector-map/index.json",
+      "url": "https://maps.tilehosting.com/data/v3.json?key=JrASl0d6TLN2193iN5RS",
       "type": "vector"
     },
     "parkandride": {

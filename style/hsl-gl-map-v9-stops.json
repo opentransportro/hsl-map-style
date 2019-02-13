@@ -1,6 +1,57 @@
 {
   "layers": [
     {
+      "id": "Stops_rail",
+      "type": "circle",
+      "metadata": {
+        "mapbox:group": "1455204550197.1404"
+      },
+      "source": "stops",
+      "source-layer": "stops",
+      "minzoom": 15,
+      "filter": [
+        "==",
+        "mode",
+        "RAIL"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "circle-color": "#8c54a2",
+        "circle-radius": {
+          "base": 1.15,
+          "stops": [
+            [
+              11.9,
+              0
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              22,
+              24
+            ]
+          ]
+        },
+        "circle-opacity": {
+          "base": 1,
+          "stops": [
+            [
+              11,
+              0.6
+            ],
+            [
+              14,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "Stops case",
       "type": "circle",
       "metadata": {
@@ -8,7 +59,6 @@
       },
       "source": "stops",
       "source-layer": "stops",
-      "interactive": true,
       "filter": [
         "!=",
         "mode",
@@ -47,7 +97,6 @@
       "source": "stops",
       "source-layer": "stops",
       "minzoom": 15,
-      "interactive": true,
       "filter": [
         "==",
         "mode",
@@ -85,7 +134,6 @@
       },
       "source": "stops",
       "source-layer": "stops",
-      "interactive": true,
       "filter": [
         "==",
         "mode",
@@ -136,7 +184,6 @@
       },
       "source": "stops",
       "source-layer": "stops",
-      "interactive": true,
       "filter": [
         "==",
         "mode",
@@ -187,7 +234,6 @@
       },
       "source": "stops",
       "source-layer": "stops",
-      "interactive": true,
       "filter": [
         "==",
         "mode",
@@ -238,7 +284,6 @@
       },
       "source": "stops",
       "source-layer": "stops",
-      "interactive": true,
       "filter": [
         "==",
         "mode",
@@ -283,11 +328,20 @@
     },
     {
       "id": "Stops_hub",
+      "type": "circle",
       "metadata": {
         "mapbox:group": "1455204550197.1404"
       },
-      "ref": "Stops case",
-      "interactive": true,
+      "source": "stops",
+      "source-layer": "stops",
+      "filter": [
+        "!=",
+        "mode",
+        "RAIL"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "circle-color": "#fff",
         "circle-radius": {
@@ -318,7 +372,6 @@
       "source": "stops",
       "source-layer": "stops",
       "minzoom": 15,
-      "interactive": true,
       "filter": [
         "in",
         "mode",

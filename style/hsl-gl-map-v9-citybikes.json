@@ -9,7 +9,6 @@
       "source": "citybike",
       "source-layer": "stations",
       "maxzoom": 14,
-      "interactive": true,
       "layout": {
         "visibility": "visible"
       },
@@ -36,11 +35,16 @@
     },
     {
       "id": "Stops_citybikes",
+      "type": "circle",
       "metadata": {
         "mapbox:group": "1457010266398.4177"
       },
-      "ref": "Stops case citybikes",
-      "interactive": true,
+      "source": "citybike",
+      "source-layer": "stations",
+      "maxzoom": 14,
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "circle-color": "#fcbc19",
         "circle-radius": {
@@ -84,7 +88,6 @@
       "source": "citybike",
       "source-layer": "stations",
       "minzoom": 14,
-      "interactive": true,
       "filter": [
         "==",
         "$type",
