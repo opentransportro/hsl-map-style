@@ -386,7 +386,7 @@
       "type": "vector"
     },
     "vector": {
-      "url": "https://maps.tilehosting.com/data/v3.json?key=JrASl0d6TLN2193iN5RS",
+      "url": "https://cdn.digitransit.fi/map/v1/hsl-vector-map/index.json",
       "type": "vector"
     }
   },
